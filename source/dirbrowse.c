@@ -6,6 +6,7 @@
 #include "menu_book_reader.h"
 #include "menu_gallery.h"
 #include "menu_music.h"
+#include "menu_text.h"
 #include "SDL_helper.h"
 #include "textures.h"
 #include "utils.h"
@@ -272,6 +273,8 @@ void Dirbrowse_OpenFile(void) {
 		Menu_PlayMusic(path);
 	else if ((!strncasecmp(file->ext, "pdf", 3)) || (!strncasecmp(file->ext, "cbz", 3)) || (!strncasecmp(file->ext, "fb2", 3)) || (!strncasecmp(file->ext, "epub", 4)))
 		Menu_OpenBook(path);
+	else if ((!strncasecmp(file->ext, "txt", 3)) || (!strncasecmp(file->ext, "cfg", 3)) || (!strncasecmp(file->ext, "log", 3)))
+		Menu_DisplayText(path);
 }
 
 // Navigate to Folder

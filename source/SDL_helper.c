@@ -105,6 +105,18 @@ void SDL_DrawTextf(int x, int y, int size, SDL_Color colour, const char* text, .
 	va_end(args);
 }
 
+FC_Rect SDL_GetTextRect(int x, int y, int size, SDL_Color colour, const char *text) {
+	FC_Font *font = GetFont(size);
+	FC_Rect position = FC_DrawColor(font, RENDERER, x, y, colour, text);
+
+	position.x = x; 
+	position.y = y;
+	position.w = FC_GetWidth(font, text);
+	position.h = FC_GetHeight(font, text);
+	
+	return position;
+}
+
 void SDL_GetTextDimensions(int size, const char *text, u32 *width, u32 *height) {
 	FC_Font *font = GetFont(size);
 

@@ -31,6 +31,7 @@ void SDL_DrawRect(int x, int y, int w, int h, SDL_Color colour);
 void SDL_DrawCircle(int x, int y, int r, SDL_Color colour);
 void SDL_DrawText(int x, int y, int size, SDL_Color colour, const char *text);
 void SDL_DrawTextf(int x, int y, int size, SDL_Color colour, const char* text, ...);
+FC_Rect SDL_GetTextRect(int x, int y, int size, SDL_Color colour, const char *text);
 void SDL_GetTextDimensions(int size, const char *text, u32 *width, u32 *height);
 void SDL_LoadImage(SDL_Texture **texture, char *path);
 void SDL_LoadImageBuf(SDL_Texture **texture, void *mem, int size);
