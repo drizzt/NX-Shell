@@ -152,7 +152,7 @@ all: generate_fonts build_mupdf $(BUILD)
 	 @echo "${GITVERSION}" > UPDATE_NIGHTLY.txt # For maintainer builds
 
 generate_fonts:
-	@cd mupdf && make generate
+	@cd mupdf && make CC=gcc generate
 
 build_mupdf:
 	@make -f Makefile.mupdf
